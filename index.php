@@ -1,13 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Resultado de la Calculadora PHP</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora PHP</title>
 </head>
 <body>
-    <h1>Resultado de la Calculadora PHP</h1>
+    
+    <h1>Calculadora PHP</h1>
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <input type="number" name="numero1" required>
+        <select name="operacion">
+            <option value="sumar">Sumar</option>
+            <option value="restar">Restar</option>
+            <option value="multiplicar">Multiplicar</option>
+            <option value="dividir">Dividir</option>
+        </select>
+        <input type="number" name="numero2" required>
+        <input type="submit" name="calcular" value="Calcular">
+    </form>
+
     <?php
-    // Verificar si se enviaron datos del formulario
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verificar si se envió el formulario
+    if (isset($_POST["calcular"])) {
         // Obtener los valores del formulario
         $numero1 = $_POST["numero1"];
         $numero2 = $_POST["numero2"];
@@ -38,7 +53,7 @@
         $resultado = calcular($numero1, $numero2, $operacion);
 
         // Mostrar el resultado
-        echo "Resultado: $resultado";
+        echo "<p>Resultado: $resultado</p>";
     }
     ?>
 </body>
