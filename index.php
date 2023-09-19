@@ -6,6 +6,7 @@
     <!-- Compressed CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/calculadora-PHP/favicor.svg">
     <title>Calculadora PHP</title>
 </head>
 <body>
